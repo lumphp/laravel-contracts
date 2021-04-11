@@ -2,10 +2,10 @@
 
 namespace Illuminate\Contracts\Database\Eloquent;
 
-interface CastsAttributes
+interface DeviatesCastableAttributes
 {
     /**
-     * Transform the attribute from the underlying model values.
+     * Increment the attribute.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
      * @param  string  $key
@@ -13,10 +13,10 @@ interface CastsAttributes
      * @param  array  $attributes
      * @return mixed
      */
-    public function get($model, string $key, $value, array $attributes);
+    public function increment($model, string $key, $value, array $attributes);
 
     /**
-     * Transform the attribute to its underlying model values.
+     * Decrement the attribute.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
      * @param  string  $key
@@ -24,5 +24,5 @@ interface CastsAttributes
      * @param  array  $attributes
      * @return mixed
      */
-    public function set($model, string $key, $value, array $attributes);
+    public function decrement($model, string $key, $value, array $attributes);
 }
